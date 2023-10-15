@@ -41,8 +41,14 @@ class LinkedList:
     def pop_first(self): #pops first element
         if self.length == 0:
             return None
-        self.head.next = None
+        temp = self.head
         self.head = self.head.next
+        temp.next = None
+        self.length -= 1
+        if self.length == 0:
+            self.tail = None        
+      
+    
     
     
     def prepend(self, value): #add item to the beginning of the linked list
