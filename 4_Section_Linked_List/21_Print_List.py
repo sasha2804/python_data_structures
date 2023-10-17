@@ -46,11 +46,24 @@ class LinkedList:
         temp.next = None
         self.length -= 1
         if self.length == 0:
-            self.tail = None        
-      
+            self.tail = None    
     
-    
-    
+    def get(self, index): #gives value based on entered index
+        pass
+
+    def set_value(self, index, value): #set value
+
+        if  value < 0 or value > self.length:
+            return None
+        new_node = Node(value)
+        temp = self.head     
+        for i in range(index):
+            print(i)
+            temp = self.head.next
+        print('index: ', i)
+        print('shown node: ', self.head.value)
+        temp.value = new_node.value       
+
     def prepend(self, value): #add item to the beginning of the linked list
         new_node = Node(value)
         if self.length == 0:
@@ -90,10 +103,12 @@ print()
 # my_linked_list.pop()
 # my_linked_list.pop()
 
+my_linked_list.set_value(15,150)
+
 # my_linked_list.print_list()
 
 # my_linked_list.prepend(125)
-my_linked_list.pop_first()
+# my_linked_list.pop_first()
 
 my_linked_list.print_list()
 
