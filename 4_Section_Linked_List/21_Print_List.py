@@ -46,11 +46,9 @@ class LinkedList:
         temp.next = None
         self.length -= 1
         if self.length == 0:
-            self.tail = None        
+            self.tail = None     
       
-    
-    
-    
+   
     def prepend(self, value): #add item to the beginning of the linked list
         new_node = Node(value)
         if self.length == 0:
@@ -71,7 +69,10 @@ class LinkedList:
         return temp.value
 
     def set_value(index, value): #sets element based on index and value
-        pass
+        temp = self.get(index)
+        print(value)
+
+
 
 
     def insert(self, index, value): #creates new node and insert it
