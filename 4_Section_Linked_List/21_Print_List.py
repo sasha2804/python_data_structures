@@ -11,7 +11,7 @@ class LinkedList:
         self.tail = new_node
         self.length = 1
     
-    def append_element(self, value): #add item to the end of the list
+    def append_element(self, value): #adds item to the end of the list
         new_node = Node(value)
         if self.head is None:
              self.head = new_node
@@ -46,24 +46,11 @@ class LinkedList:
         temp.next = None
         self.length -= 1
         if self.length == 0:
-            self.tail = None    
+            self.tail = None        
+      
     
-    def get(self, index): #gives value based on entered index
-        pass
-
-    def set_value(self, index, value): #set value
-
-        if  value < 0 or value > self.length:
-            return None
-        new_node = Node(value)
-        temp = self.head     
-        for i in range(index):
-            print(i)
-            temp = self.head.next
-        print('index: ', i)
-        print('shown node: ', self.head.value)
-        temp.value = new_node.value       
-
+    
+    
     def prepend(self, value): #add item to the beginning of the linked list
         new_node = Node(value)
         if self.length == 0:
@@ -73,14 +60,40 @@ class LinkedList:
             new_node.next = self.head
             self.head = new_node
         self.length += 1
-        return True        
-            
+        return True
+
+    def get(self, index): #gives element based on given index number
+        if index > self.length or index <= 0:
+            return None
+        temp = self.head     
+        for _ in range(index-1):
+            temp = temp.next        
+        return temp.value
+
+    def set_value(index, value): #sets element based on index and value
+        pass
+
+
+    def insert(self, index, value): #creates new node and insert it
+        pass
+
+    def remove(index): #removes element from the LL
+        pass
+
+    def reverse(): #reverses the whole list
+        pass
+
+
+                
     def print_list(self): #prints the whole list
         temp = self.head
         print('print')    
         while temp is not None:
             print(temp.value)
             temp = temp.next
+        print('numver of elements in LL:', self.length)
+
+    
     
    
 
@@ -90,7 +103,7 @@ class LinkedList:
 
     # def append(self, value): #create new node and add it to end
     # def prepend(self, value): # create new node and add it to beginning
-    # def insert(self, index, value): #create new node and insert it
+    # def insert(self, index, value): #creates new node and insert it
 
 my_linked_list = LinkedList(4)
 my_linked_list.append_element(5)
@@ -103,14 +116,12 @@ print()
 # my_linked_list.pop()
 # my_linked_list.pop()
 
-my_linked_list.set_value(15,150)
-
 # my_linked_list.print_list()
-
 # my_linked_list.prepend(125)
-# my_linked_list.pop_first()
+my_linked_list.pop_first()
 
 my_linked_list.print_list()
+my_linked_list.get(3)
 
 
 
