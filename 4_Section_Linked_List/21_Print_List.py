@@ -93,7 +93,21 @@ class LinkedList:
         self.length += 1
         return True     
 
-    def remove(index): #removes element from the LL
+    def remove(self, index): #removes element from the LL
+        if index < 0 or index > self.length:
+            return None
+        if index == 0:
+            self.pop_first()
+        if index == self.length-1:
+            self.pop()        
+        prev = self.get(index - 1)
+        temp = prev.next
+        prev.next = temp.next
+        temp.next = None
+        self.length -= 1
+        return temp
+    
+    def reverse(self):
         pass
 
     def reverse(): #reverses the whole list
@@ -126,8 +140,13 @@ my_linked_list.append_element(9)
 my_linked_list.print_list()
 
 # my_linked_list.set_value(2,120)
-my_linked_list.insert(0,180)
+# my_linked_list.insert(0,180)
 # my_linked_list.get(3)
+
+
+
+my_linked_list.remove(3)
+
 my_linked_list.print_list()
 
 
