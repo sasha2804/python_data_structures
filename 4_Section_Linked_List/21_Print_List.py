@@ -114,20 +114,23 @@ class LinkedList:
         self.tail = temp
         after = temp.next
         before = None
-
         for _ in range(self.length):
             after = temp.next
             temp.next = before
             before = temp
             temp = after
 
-        # print('self.head: ', self.head.value)
-        # print('self.tail:', self.tail.value)
+    def find_middle_node(self):
+        slow = self.head
+        fast = self.head
+        while fast.next != None:            
+            print('fast: ',fast.value) 
+            fast = fast.next.next
+            print('slow:', slow.value)
+            slow = slow.next
+            
+                 
 
-        # print('after: ',temp.value)
-        # print('before: ',before)
-
-       
 
 
                  
@@ -142,15 +145,19 @@ class LinkedList:
 
 
 
-# my_linked_list = LinkedList(4)
-# my_linked_list.append_element(5)
-# my_linked_list.append_element(6)
-# my_linked_list.append_element(7)
-# my_linked_list.append_element(8)
-# my_linked_list.append_element(9)
+my_linked_list = LinkedList(4)
+my_linked_list.append(5)
+my_linked_list.append(6)
+my_linked_list.append(7)
+my_linked_list.append(8)
+my_linked_list.append(9)
+my_linked_list.append(10)
 # my_linked_list.pop()
 # my_linked_list.pop()
-# my_linked_list.print_list()
+my_linked_list.print_list()
+
+my_linked_list.find_middle_node()
+
 # my_linked_list.prepend(125)
 # my_linked_list.pop_first()
 # my_linked_list.set_value(2,15)
