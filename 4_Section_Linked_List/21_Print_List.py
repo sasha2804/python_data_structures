@@ -124,10 +124,22 @@ class LinkedList:
         slow = self.head
         fast = self.head
         while fast.next != None:            
-            print('fast: ',fast.value) 
-            fast = fast.next.next
-            print('slow:', slow.value)
+            
+            
+            
             slow = slow.next
+            print('slow:', slow.value)
+
+            fast = fast.next.next
+            print('fast: ',fast.value)
+
+            print('division: ',fast.value%2)
+
+        if fast.value%2  == 0:
+            even = slow.next
+            return even
+
+        return slow
             
                  
 
@@ -156,7 +168,7 @@ my_linked_list.append(10)
 # my_linked_list.pop()
 my_linked_list.print_list()
 
-my_linked_list.find_middle_node()
+print('middle node: ',my_linked_list.find_middle_node())
 
 # my_linked_list.prepend(125)
 # my_linked_list.pop_first()
