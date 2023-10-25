@@ -1,4 +1,5 @@
 
+from audioop import lin2adpcm
 from unittest import removeResult
 from xml.dom import IndexSizeErr
 
@@ -108,8 +109,8 @@ class LinkedList:
         self.length -= 1
         return temp
     
-    def reverse(self):
-        temp = self.head
+    def reverse(self): #reverses list
+        temp = self.head #swap tail and head
         self.head = self.tail
         self.tail = temp
         after = temp.next
@@ -168,8 +169,15 @@ my_linked_list.append(10)
 # my_linked_list.pop()
 my_linked_list.print_list()
 
-print('middle node: ',my_linked_list.find_middle_node())
 
+def find_kth_from_end(index):
+
+    test = my_linked_list.head.value
+    print('test: ',test)
+
+find_kth_from_end(5)
+
+# print('middle node: ',my_linked_list.find_middle_node())
 # my_linked_list.prepend(125)
 # my_linked_list.pop_first()
 # my_linked_list.set_value(2,15)
