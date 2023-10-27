@@ -124,18 +124,12 @@ class LinkedList:
     def find_middle_node(self):
         slow = self.head
         fast = self.head
-        while fast.next != None:            
-            
-            
-            
+        while fast.next != None:        
             slow = slow.next
             print('slow:', slow.value)
-
             fast = fast.next.next
             print('fast: ',fast.value)
-
             print('division: ',fast.value%2)
-
         if fast.value%2  == 0:
             even = slow.next
             return even
@@ -171,11 +165,24 @@ my_linked_list.print_list()
 
 
 def find_kth_from_end(index):
+    slow = my_linked_list.head
+    fast = my_linked_list.head
+    for _ in range(index):
+        fast = fast.next
+        if fast == None:
+            return None    
+    # print('fast:', fast.value)
+    while fast is not None:
+        slow = slow.next
+        fast = fast.next
+    return slow.value
+    # print('fast: ',fast)
 
-    test = my_linked_list.head.value
-    print('test: ',test)
 
-find_kth_from_end(5)
+print('test empty list: ', find_kth_from_end(5))
+print('test k == length: ', find_kth_from_end(7))
+print('test k < length: ', find_kth_from_end(3))
+print('test k > length: ', find_kth_from_end(4))
 
 # print('middle node: ',my_linked_list.find_middle_node())
 # my_linked_list.prepend(125)
