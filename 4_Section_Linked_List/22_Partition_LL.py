@@ -32,7 +32,32 @@ class LinkedList:
         self.length = 0
         
     # WRITE PARTITION_LIST METHOD HERE #
-    def partition_ist(self, x):
+    def partition_list(self, x):
+        if self.head is None:
+            return None
+
+
+        lst = []
+        temp = self.head
+        for _ in range(self.length):
+            if temp.value < x:
+                lst.append(temp.value)
+            temp = temp.next            
+        temp = self.head
+        for _ in range(self.length):
+            if temp.value >= x:
+                lst.append(temp.value)        
+            temp = temp.next          
+        # print('temp list: ', lst)
+        self.make_empty()
+        for i in lst:
+            self.append(i)
+
+
+
+
+
+
 
         
 
@@ -59,6 +84,11 @@ print("LL before partition_list:")
 ll.print_list() # Output: 3 5 8 10 2 1
 
 # ll.partition_list(5)
+
+# print("LL after partition_list:")
+
+
+ll.partition_list(5)
 
 print("LL after partition_list:")
 ll.print_list() # Output: 3 2 1 5 8 10
