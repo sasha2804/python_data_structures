@@ -135,11 +135,31 @@ class LinkedList:
             return even
 
         return slow
+
+    def reverse_between(self, start_index, end_index):
+        temp_list = []
+        temp = self.head
+        for _ in range(start_index, end_index):
+            temp_list.append(temp.value)
+            temp = temp.next        
+        temp_list.reverse()
+        print(temp_list)
+        temp = self.head
+        for i in temp_list:
+            temp.value = i
+            temp = temp.next
+
+
+
+
+
+
+
             
                  
 
 
-
+ 
                  
     def print_list(self): #prints the whole list
         temp = self.head
@@ -161,6 +181,11 @@ my_linked_list.append(9)
 my_linked_list.append(10)
 # my_linked_list.pop()
 # my_linked_list.pop()
+my_linked_list.print_list()
+
+
+my_linked_list.reverse_between(0,4)
+
 my_linked_list.print_list()
 
 
