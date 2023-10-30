@@ -1,5 +1,13 @@
-thisset = {"apple", "banana", "cherry", True, 1, 2}
+inp = '100'
+
+out = int(inp,2)
+
+print(out)
 
 
-for i in thisset:
-    print(i)
+
+txt = ''
+
+for i in range(10):
+    txt += 'a'
+print(txt)
