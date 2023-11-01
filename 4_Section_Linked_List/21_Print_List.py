@@ -136,18 +136,72 @@ class LinkedList:
 
         return slow
 
+    # def reverse_between(self, start_index, end_index):
+    #     temp_list = []
+    #     temp = self.head
+
+    #     for _ in range(start_index): #set the staring reverse point
+    #         temp = temp.next
+    #     temp_start = temp
+
+    #     for _ in range(start_index, end_index+1): # make separate list to be reversed
+    #         temp_list.append(temp.value)
+    #         temp = temp.next        
+    #     print('temp_finish: ',temp.value)        
+    #     temp_list.reverse()
+    #     print('temp List: ',temp_list)
+
+    #     temp = temp_start
+    #     print('temp start: ',temp)
+    #     for i in temp_list:
+    #         temp.value = i
+    #         temp = temp.next
+
     def reverse_between(self, start_index, end_index):
-        temp_list = []
-        temp = self.head
-        for _ in range(start_index, end_index):
-            temp_list.append(temp.value)
-            temp = temp.next        
-        temp_list.reverse()
-        print(temp_list)
-        temp = self.head
-        for i in temp_list:
-            temp.value = i
-            temp = temp.next
+        # 1. Edge Case: If list has only one node or none, exit.
+        if self.length <= 1:
+            return
+    
+        # 2. Create a dummy node to simplify head operations.
+        dummy_node = Node(0)
+        dummy_node.next = self.head
+    
+        # 3. Init 'previous_node', pointing just before reverse starts.
+        previous_node = dummy_node
+    
+        # 4. Move 'previous_node' to its position.
+        # It'll be at index 'start_index - 1' after this loop.
+        for i in range(start_index):
+            previous_node = previous_node.next
+        print('previous node: ', previous_node.value)
+
+        # 5. Init 'current_node' at 'start_index', start of reversal.
+        current_node = previous_node.next        
+        print('current node: ', current_node.value)
+    
+        # 6. Begin reversal:
+        # Loop reverses nodes between 'start_index' and 'end_index'.
+        for i in range(end_index - start_index):
+            print('i:',i)
+            # 6.1. 'node_to_move' is next node we want to reverse.
+            node_to_move = current_node.next
+            print('node to move: ', node_to_move.value)
+    
+            # 6.2. Disconnect 'node_to_move', point 'current_node' after it.
+            current_node.next = node_to_move.next
+    
+            # 6.3. Insert 'node_to_move' at new position after 'previous_node'.
+            node_to_move.next = previous_node.next
+    
+            # 6.4. Link 'previous_node' to 'node_to_move'.
+            previous_node.next = node_to_move
+    
+        # 7. Update list head if 'start_index' was 0.
+        self.head = dummy_node.next
+                
+
+
+
 
 
 
@@ -184,7 +238,9 @@ my_linked_list.append(10)
 my_linked_list.print_list()
 
 
-my_linked_list.reverse_between(0,4)
+my_linked_list.reverse_between(2,4)
+
+# my_linked_list.reverse_between(1,4)
 
 my_linked_list.print_list()
 
