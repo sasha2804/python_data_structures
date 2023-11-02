@@ -61,25 +61,29 @@ class DoublyLinkedList:
         temp.next = None
         self.length -= 1
         return temp
-
-
-
-        
-
-        
-
-
-
     
-        
-
-
-        
-
+    def get(self, index):
+        if index < 0 or index >= self.length:
+            return None
+        temp = self.head
+        if index < self.length//2:
+            print('next is active')
+            for _ in range(index):
+                temp = temp.next
+        else:
+            temp = self.tail
+            print('prev is active')
+            for _ in range(self.length - 1, index, -1):
+                temp = temp.prev
+        return temp
     
+    def set(self, index, value):
+        temp = self.get(index)
+        if temp is not None:            
+            temp.value = value
+            return True
+        return None
     
-
-
     
     def print(self):
         temp = self.head
@@ -99,5 +103,13 @@ my_linked_list.prepend(145)
 
 my_linked_list.pop()
 my_linked_list.pop_first()
+my_linked_list.append(20)
+my_linked_list.append(30)
+my_linked_list.append(40)
+my_linked_list.append(50)
+my_linked_list.append(60)
 
+my_linked_list.set(5, 185)
 my_linked_list.print()
+
+print('get method: ',my_linked_list.get(5))

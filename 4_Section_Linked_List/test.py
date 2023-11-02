@@ -1,13 +1,15 @@
-inp = '100'
+# inp = '100'
 
-out = int(inp,2)
+# out = int(inp,2)
 
-print(out)
+# print(out)
 
 
 
-txt = ''
+# txt = ''
 
-for i in range(10):
-    txt += 'a'
-print(txt)
+# for i in range(10):
+#     txt += 'a'
+# print(txt)
+
+print(7//2)
