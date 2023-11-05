@@ -128,7 +128,6 @@ class LinkedList:
         if fast.value%2  == 0:
             even = slow.next
             return even
-
         return slow
 
     # def reverse_between(self, start_index, end_index):

@@ -115,6 +115,34 @@ class DoublyLinkedList:
         rem_node.prev = None
         self.length -= 1
         return rem_node
+
+    def swap_first_last(self):
+        if self.head is None:
+            return None
+        a = self.head
+        b = self.tail
+        a.value, b.value = b.value, a.value
+        return True
+    
+    def reverse(self):
+        # a = self.head
+        # b = self.tail
+        # a, b = b, a
+        current = self.head
+        
+
+
+        temp = self.head
+        self.head = self.tail
+        self.tail = temp
+
+        
+        
+        
+        
+     
+    
+
     
     def print(self):
         temp = self.head
@@ -147,6 +175,11 @@ my_linked_list.insert(2, 888)
 my_linked_list.print()
 
 my_linked_list.remove(1)
+
+# my_linked_list.swap_first_last()
+# my_linked_list.swap_first_last()
+
+my_linked_list.reverse()
 
 print('\n')
 my_linked_list.print()
