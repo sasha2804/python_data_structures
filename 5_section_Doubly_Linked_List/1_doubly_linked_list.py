@@ -67,12 +67,10 @@ class DoublyLinkedList:
             return None
         temp = self.head
         if index < self.length//2:
-            print('next is active')
             for _ in range(index):
                 temp = temp.next
         else:
             temp = self.tail
-            print('prev is active')
             for _ in range(self.length - 1, index, -1):
                 temp = temp.prev
         return temp
@@ -101,12 +99,22 @@ class DoublyLinkedList:
         self.length += 1
         return True
 
-
-
-
-    
-
-    
+    def remove(self, index):
+        if index < 0 or index >= self.length:
+            return None
+        if index == 0:
+            return self.pop_first()            
+        if index == self.length-1:
+            return self.pop()        
+        before = self.get(index - 1)
+        rem_node = self.get(index)
+        after = self.get(index + 1) 
+        before.next = after
+        after.prev = before
+        rem_node.next = None
+        rem_node.prev = None
+        self.length -= 1
+        return rem_node
     
     def print(self):
         temp = self.head
@@ -138,4 +146,10 @@ my_linked_list.insert(2, 888)
 
 my_linked_list.print()
 
-print('get method: ',my_linked_list.get(5))
+my_linked_list.remove(1)
+
+print('\n')
+my_linked_list.print()
+
+# print('\n length: ',my_linked_list.length)
+# print('get method: ',my_linked_list.get(5))
