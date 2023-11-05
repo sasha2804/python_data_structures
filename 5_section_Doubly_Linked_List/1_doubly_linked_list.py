@@ -129,13 +129,19 @@ class DoublyLinkedList:
         # b = self.tail
         # a, b = b, a
         current = self.head
+        next = self.head.next
+
+        next.next = current
+        current.prev = next
+
+        
+
+        print('current: ',current.value)
+        print('next: ', next.value)
         
 
 
-        temp = self.head
-        self.head = self.tail
-        self.tail = temp
-
+      
         
         
         
