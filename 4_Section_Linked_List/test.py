@@ -12,4 +12,4 @@
 #     txt += 'a'
 # print(txt)
 
-print(7//2)
+print(6%2)
