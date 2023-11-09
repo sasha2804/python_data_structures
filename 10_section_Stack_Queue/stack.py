@@ -23,18 +23,22 @@ class Stack:
         if self.height == 0:
             return None
         temp = self.top
+        self.top = self.top.next
+        temp.next = None
+        self.height -= 1 
+        if self.height == 0:
+            self.head = None
+        return temp
+        
 
-        if self.height == 1:
-            self.height -= 1
-            return temp
 
        
         
-        self.height -= 1
-        return temp 
+        
     
     def print(self):
         temp  = self.top
+        print('top: ',temp.value)
         while temp is not None:
             print(temp.value)
             temp  = temp.next
