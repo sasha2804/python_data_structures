@@ -54,6 +54,8 @@ stack.push(5)
 stack.print()
 
 
+
+
 print('\n')
 
 stack.pop()
