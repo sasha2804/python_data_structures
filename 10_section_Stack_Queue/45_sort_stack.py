@@ -33,15 +33,15 @@ def sort_stack(stack):
     additional_stack = Stack()
 
     while not stack.is_empty():       
-        temp = my_stack.pop()
+        temp = stack.pop()
 
         while not additional_stack.is_empty() and additional_stack.peek() > temp:
-            my_stack.push(additional_stack.pop())
-            print('add stack peak: ',  additional_stack.peek())        
+            stack.push(additional_stack.pop())
+                    
         additional_stack.push(temp) 
 
     while not additional_stack.is_empty():
-        my_stack.push(additional_stack.pop())
+        stack.push(additional_stack.pop())
       
 
 my_stack = Stack()

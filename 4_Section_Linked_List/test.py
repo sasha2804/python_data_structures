@@ -1,15 +1,6 @@
-# inp = '100'
 
-# out = int(inp,2)
+x = None
+y = 5
 
-# print(out)
-
-
-
-# txt = ''
-
-# for i in range(10):
-#     txt += 'a'
-# print(txt)
-
-print(6%2)
+if y > x:
+    print('OK')
