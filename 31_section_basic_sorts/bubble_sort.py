@@ -7,23 +7,23 @@ def bubble_sort(lst):
     return lst
 
 
-# worse solution
-def bubble_sort(lst):
-    while True:
-        count = 0
-        for i in range(0, len(lst)-1):        
-            if lst[i] > lst[i+1]:
-                lst[i], lst[i+1] = lst[i+1], lst[i]
-            else:
-                count += 1
-        if count == len(lst) - 1:
-            break
-    return lst
+# # worse solution
+# def bubble_sort(lst):
+#     while True:
+#         count = 0
+#         for i in range(0, len(lst)-1):        
+#             if lst[i] > lst[i+1]:
+#                 lst[i], lst[i+1] = lst[i+1], lst[i]
+#             else:
+#                 count += 1
+#         if count == len(lst) - 1:
+#             break
+#     return lst
 
 
-lst1 = [2,4,6,5,1,3]
+# lst1 = [2,4,6,5,1,3]
 
 
-print(bubble_sort(lst1))
+# print(bubble_sort(lst1))
 
 
