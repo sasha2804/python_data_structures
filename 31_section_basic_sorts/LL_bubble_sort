@@ -28,23 +28,40 @@ class LinkedList:
         self.length += 1
 
     
-    def test(self):
-        print('length: ',self.length)
+ 
 
     
     def bubble_sort(self):
         temp = self.head
-
         count = 0
-
-        while count < (self.length - 1):
-            temp = self.head      
-            while temp.next is not None:
+        while count < self.length - 1:
+            count = 0
+            temp = self.head
+            for _ in range(0, self.length-1):
                 if temp.value > temp.next.value:
                     temp.value, temp.next.value = temp.next.value, temp.value
-                    count = 0
-                else:
+                else:    
                     count += 1
+                temp = temp.next   
+
+
+
+
+
+        # while temp.next is not None:
+        #     if temp.value > temp.next.value:
+        #         count += 1
+        #     temp = temp.next
+        # print('counter:', count)
+
+        # while count < (self.length - 1):
+        #     temp = self.head      
+        #     while temp.next is not None:
+        #         if temp.value > temp.next.value:
+        #             temp.value, temp.next.value = temp.next.value, temp.value
+        #             count = 0
+        #         else:
+        #             count += 1
 
                 
 
@@ -92,7 +109,7 @@ my_linked_list.bubble_sort()
 print("\nSorted Linked List:")
 my_linked_list.print_list()
 
-my_linked_list.test()
+
 
 
 """
