@@ -1,8 +1,7 @@
 class Node:
     def __init__(self, value):
         self.value = value
-        self.next = None
-        
+        self.next = None        
 
 class LinkedList:
     def __init__(self, value):
@@ -25,11 +24,7 @@ class LinkedList:
         else:
             self.tail.next = new_node
             self.tail = new_node
-        self.length += 1
-
-    
- 
-
+        self.length += 1  
     
     def bubble_sort(self):
         temp = self.head
@@ -48,49 +43,6 @@ class LinkedList:
 
 
 
-        # while temp.next is not None:
-        #     if temp.value > temp.next.value:
-        #         count += 1
-        #     temp = temp.next
-        # print('counter:', count)
-
-        # while count < (self.length - 1):
-        #     temp = self.head      
-        #     while temp.next is not None:
-        #         if temp.value > temp.next.value:
-        #             temp.value, temp.next.value = temp.next.value, temp.value
-        #             count = 0
-        #         else:
-        #             count += 1
-
-                
-
-
-            # if count < self.length:
-            #    count += 1
-
-            #    if temp.value > temp.next.value:
-            #        temp.value, temp.next.value = temp.next.value, temp.value
-                
-            # break
-
-
-        
-
-        # temp, temp.next = temp.next, temp
-
-
-
-
-
-
-
-    # WRITE BUBBLE_SORT METHOD HERE #
-    #                               #
-    #                               #
-    #                               #
-    #                               #
-    #################################
 
 
 
