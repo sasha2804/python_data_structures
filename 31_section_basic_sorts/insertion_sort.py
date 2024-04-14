@@ -8,7 +8,7 @@ def insertion_sort(lst):
     return lst            
     
 
-lst = [4,2,6,5,1,3]
+lst = [4,2,2,6,5,1,3]
 
 
 print(insertion_sort(lst))
